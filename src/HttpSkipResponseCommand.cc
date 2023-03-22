@@ -236,7 +236,7 @@ bool HttpSkipResponseCommand::processResponse()
                          error_code::HTTP_SERVICE_UNAVAILABLE);
     };
 
-    throw DL_ABORT_EX2(fmt(EX_BAD_STATUS, statusCode),
+    throw DL_RETRY_EX2(fmt(EX_BAD_STATUS, statusCode),
                        error_code::HTTP_PROTOCOL_ERROR);
   }
 
